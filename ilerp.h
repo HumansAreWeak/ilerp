@@ -5,8 +5,8 @@
  * @author HumansAreWeak
  * @date 02.04.2023
  */
-#ifndef MC_LERP_H_
-#define MC_LERP_H_
+#ifndef ILERP_H_
+#define ILERP_H_
 
 #include <stdint.h>
 
