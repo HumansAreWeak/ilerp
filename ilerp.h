@@ -32,9 +32,29 @@
  */
 #define _ilerpd_base(src, dest, delta, type) (type)((src * (((type) (((1LL << ((sizeof(type) * 8) - 1)) * 2) - 1)) - delta) + dest * delta) / 255)
 
+/**
+ * Integer-based linear interpolation for signed integer. It does interpolation in a small scale for a really small cost.
+ * @param src First value, type must be int8_t
+ * @param dest Second value, type must be int8_t
+ * @param delta Change in time, int8_t between 0 and 127
+ */
 #define _ilerps_i8(src, dest, delta) _ilerps_base(src, dest, delta, int8_t)
+
+/**
+ * Integer-based linear interpolation for signed integer. It does interpolation in a small scale for a really small cost.
+ * @param src First value, type must be uint8_t
+ * @param dest Second value, type must be uint8_t
+ * @param delta Change in time, uint8_t between 0 and 127
+ */
 #define _ilerps_u8(src, dest, delta) _ilerps_base(src, dest, delta, uint8_t)
 
+
+/**
+ * Integer-based linear interpolation for signed integer. It does interpolation in a small scale for a really small cost.
+ * @param src First value, type must be uint8_t
+ * @param dest Second value, type must be uint8_t
+ * @param delta Change in time, uint8_t between 0 and 255
+ */
 #define _ilerpd_u8(src, dest, delta) _ilerpd_base(src, dest, delta, uint8_t)
 
 #endif
